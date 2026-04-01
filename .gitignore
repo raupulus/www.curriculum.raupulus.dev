@@ -1,0 +1,98 @@
+# ========================
+# Variables de entorno
+# ========================
+.env
+.env.*
+!.env.example
+*.env
+
+# ========================
+# IDEs y editores
+# ========================
+
+# JetBrains (IntelliJ, WebStorm, PhpStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Netbeans
+nbproject/
+nb-configuration.xml
+
+# Brackets
+.brackets.json
+
+# ========================
+# Sistema Operativo
+# ========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# ========================
+# Logs y temporales
+# ========================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
+
+# ========================
+# Dependencias (por si se añaden herramientas de build)
+# ========================
+node_modules/
+vendor/
+bower_components/
+
