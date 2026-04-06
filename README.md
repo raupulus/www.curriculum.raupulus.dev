@@ -1,93 +1,115 @@
-# www.curriculum.raupulus.dev
+# 📄 Curriculum Vitae — Raúl Caro Pastorino (@raupulus)
 
+Sitio web estático con el Curriculum Vitae profesional de **Raúl Caro Pastorino** ([@raupulus](https://raupulus.dev)), Desarrollador Full Stack especializado en Backend con Laravel.
 
+🌐 **Web en producción:** [curriculum.raupulus.dev](https://curriculum.raupulus.dev)
 
-## Getting started
+## 🧑‍💻 Sobre el proyecto
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Este repositorio contiene el código fuente y los assets distribuibles del CV online de Raúl Caro Pastorino. Se trata de una página web estática, moderna y responsive que presenta la información profesional en un diseño editorial de alta calidad.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### Características
 
-## Add your files
+- **HTML estático** — Una sola página (`dist/index.html`) lista para servir desde cualquier hosting estático.
+- **Tailwind CSS v4** — Estilos generados con Tailwind CSS usando su CLI, con un sistema de diseño personalizado basado en Material Design 3 (colores, tipografías, superficies).
+- **Diseño editorial** — Tipografía dual (Inter + Noto Serif), paleta Deep Navy/Off-White, sin bordes duros, con jerarquía visual mediante superficies tonales y sombras ambientales.
+- **Responsive** — Diseño adaptable a móvil, tablet y escritorio con navegación lateral flotante en pantallas grandes.
+- **Google Fonts & Material Symbols** — Iconografía y fuentes cargadas desde CDN.
+- **Google Analytics** — Integración con Google Tag Manager para seguimiento de visitas.
+- **Descarga de CV en PDF** — Botón para descargar el CV en formato PDF directamente desde la web.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Secciones del CV
+
+- **Perfil** — Foto, nombre, cargo, descripción profesional y datos de contacto.
+- **Experiencia** — Historial laboral con timeline visual.
+- **Educación** — Formación académica y cursos.
+- **Habilidades** — Stack tecnológico (Laravel, PHP, PostgreSQL, JavaScript, Vue, Python, Git, Linux, etc.).
+- **Otros conocimientos** — Formaciones complementarias (Docker, Node.js, Ionic, Agile/Scrum, etc.).
+- **Contacto** — Email, LinkedIn, GitHub y web personal.
+
+## 📁 Estructura del proyecto
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/desde-chipiona/www.curriculum.raupulus.dev.git
-git branch -M main
-git push -uf origin main
+├── dist/                  # ← Archivos distribuibles (web estática lista para deploy)
+│   ├── index.html         #    Página principal del CV
+│   ├── cv_pdf.pdf         #    CV en formato PDF descargable
+│   ├── css/
+│   │   └── styles.css     #    CSS compilado y minificado (Tailwind)
+│   └── images/
+│       ├── logo.png       #    Foto de perfil
+│       └── qr.png         #    Código QR del CV online
+├── src/
+│   └── input.css          # ← CSS fuente con imports de Tailwind y tema personalizado
+├── template/              # ← Plantilla de diseño y referencia (no se sube a git)
+│   ├── code.html
+│   ├── DESIGN.md
+│   └── screen.png
+├── package.json           # ← Configuración npm con scripts de build
+├── .gitignore
+└── README.md
 ```
 
-## Integrate with your tools
+## 🚀 Despliegue y generación de assets
 
-- [ ] [Set up project integrations](https://gitlab.com/desde-chipiona/www.curriculum.raupulus.dev/-/settings/integrations)
+### Requisitos previos
 
-## Collaborate with your team
+- [Node.js](https://nodejs.org/) (v18 o superior recomendado)
+- npm (incluido con Node.js)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Instalación de dependencias
 
-## Test and Deploy
+```bash
+npm install
+```
 
-Use the built-in continuous integration in GitLab.
+### Generar CSS para producción (minificado)
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```bash
+npm run build
+```
 
-***
+Este comando ejecuta el CLI de Tailwind CSS, procesa `src/input.css` y genera el archivo de estilos optimizado y minificado en `dist/css/styles.css`.
 
-# Editing this README
+### Modo desarrollo (watch)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+```bash
+npm run watch
+```
 
-## Suggestions for a good README
+Recompila automáticamente los estilos CSS cada vez que se detectan cambios en los archivos fuente.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Despliegue
 
-## Name
-Choose a self-explaining name for your project.
+El contenido del directorio **`dist/`** es la web estática lista para servir. Puedes desplegarla en cualquier servicio de hosting estático:
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- **GitHub Pages** — Sirve directamente el directorio `dist/`.
+- **GitLab Pages** — Configura el CI/CD para publicar `dist/`.
+- **Nginx / Apache** — Apunta el `root` del virtualhost al directorio `dist/`.
+- **Netlify / Vercel / Cloudflare Pages** — Sube el directorio `dist/` como carpeta de publicación.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## 🔗 Repositorios
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+| Plataforma | URL |
+|---|---|
+| **GitHub** | [github.com/raupulus/www.curriculum.raupulus.dev](https://github.com/raupulus/www.curriculum.raupulus.dev) |
+| **GitLab** | [gitlab.com/raupulus/www.curriculum.raupulus.dev](https://gitlab.com/raupulus/www.curriculum.raupulus.dev) |
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## 🛠 Stack tecnológico
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- HTML5
+- [Tailwind CSS v4](https://tailwindcss.com/) (con `@tailwindcss/cli`)
+- [Google Fonts](https://fonts.google.com/) (Inter, Noto Serif)
+- [Material Symbols](https://fonts.google.com/icons)
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## 👤 Autor
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+**Raúl Caro Pastorino** — [@raupulus](https://raupulus.dev)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- 🌐 Web: [raupulus.dev](https://raupulus.dev)
+- 📧 Email: [public@raupulus.dev](mailto:public@raupulus.dev)
+- 💼 LinkedIn: [linkedin.com/in/raulcaropastorino](https://www.linkedin.com/in/raulcaropastorino/)
+- 🐙 GitHub: [github.com/raupulus](https://github.com/raupulus)
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 📜 Licencia
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Este proyecto es de uso personal. Todos los derechos reservados © Raúl Caro Pastorino.

@@ -96,3 +96,8 @@ node_modules/
 vendor/
 bower_components/
 
+# ========================
+# Plantillas y archivos de diseño (solo desarrollo)
+# ========================
+template/
+

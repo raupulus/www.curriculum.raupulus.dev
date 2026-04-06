@@ -1,0 +1,26 @@
+{
+  "name": "www.curriculum.raupulus.dev",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/styles.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/css/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/raupulus/www.curriculum.raupulus.dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://gitlab.com/raupulus/www.curriculum.raupulus.dev/issues"
+  },
+  "homepage": "https://gitlab.com/raupulus/www.curriculum.raupulus.dev#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
