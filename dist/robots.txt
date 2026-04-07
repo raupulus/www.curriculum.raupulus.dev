@@ -1,0 +1,9 @@
+# robots.txt - curriculum.raupulus.dev
+# Autor: Raúl Caro Pastorino (raupulus)
+# Web: https://raupulus.dev
+# Contacto: public@raupulus.dev
+
+User-agent: *
+Allow: /
+
+Sitemap: https://curriculum.raupulus.dev/sitemap.xml
